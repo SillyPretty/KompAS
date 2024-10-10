@@ -1,0 +1,26 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/animate.scss';
+
+.button {
+  display: block;
+  width: 100%;
+  box-shadow: 0 0 12px #5e5e5e;
+  border-radius: 3px;
+  transition: $transition-variable;
+  &:hover {
+    color: $foreground-focused;
+    box-shadow: 0px 0 25px #fff;
+  }
+}
+
+.large {
+  font-size: 28px;
+  max-width: 300px;
+  min-height: 70px;
+}
+
+.normal {
+  font-size: 16px;
+  max-width: 190px;
+  min-height: 40px;
+}

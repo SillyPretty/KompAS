@@ -1,0 +1,21 @@
+.footer_mail {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 410px;
+}
+.footer_description {
+  max-width: 338px;
+  text-align: center;
+}
+.footer_input {
+  display: block;
+  width: 100%;
+  background-color: white;
+  color: #0a0a0a;
+  padding: 10px 5px;
+}

@@ -1,0 +1,29 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/animate.scss';
+
+.menu {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_nav {
+    display: flex;
+    gap: 45px;
+    > li {
+      cursor: pointer;
+      font-size: 20px;
+      transition: $transition-variable;
+      &:hover {
+        color: $foreground-focused;
+      }
+    }
+  }
+  &_link {
+    display: flex;
+    gap: 45px;
+    > li {
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
