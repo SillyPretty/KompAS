@@ -1,5 +1,11 @@
 @import '/src/assets/variables.scss';
 
+.container {
+  max-width: 1288px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* Reset and base styles  */
 
 * {
@@ -8,19 +14,21 @@
   border: none;
 }
 
+body {
+  background-color: $main-background;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--main-background) transparent;
+}
+
 *,
 *::before,
 *::after {
   color: $foreground;
-  background-color: $main-background;
   font-family: $default-fonts;
   box-sizing: border-box;
-}
-
-.container {
-  max-width: 1288px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 /* Links */
@@ -119,4 +127,17 @@ label {
 
 legend {
   display: block;
+}
+
+.swiper-pagination-bullet {
+  max-width: 40px;
+  width: 100%;
+  background-color: gray;
+  border-radius: 0;
+}
+.swiper-pagination-bullet-active {
+  max-width: 40px;
+  width: 100%;
+  background-color: white;
+  border-radius: 0;
 }

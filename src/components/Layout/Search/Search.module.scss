@@ -1,0 +1,14 @@
+.search__wrap {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 40px 0 ;
+  gap: 33px;
+}
+
+.search__button {
+  > img {
+    width: 100%;
+    max-width: 48px;
+    min-height: 48px;
+  }
+}

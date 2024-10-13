@@ -1,7 +1,12 @@
 import Layout from '../../components/Layout/Layout'
+import Slider from '../../components/Slider/Slider'
 
 const Home = () => {
-  return <Layout>Home</Layout>
+  return (
+    <Layout>
+      <Slider />
+    </Layout>
+  )
 }
 
 export default Home

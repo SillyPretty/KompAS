@@ -1,0 +1,8 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/animate.scss';
+
+.wrap {
+  position: absolute;
+  animation: opacity 0.4s;
+  background-color: #0F0F0F;
+}

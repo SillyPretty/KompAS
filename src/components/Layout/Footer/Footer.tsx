@@ -1,4 +1,5 @@
 import Button from '../../../ui/Button/Button'
+import Input from '../../../ui/Input/Input'
 
 import Header from '../Header/Header'
 
@@ -12,7 +13,7 @@ const Footer = () => {
         <p className={styles.footer_description}>
           Подпишись на рассылку, чтобы быть в курсе всех событий
         </p>
-        <input
+        <Input
           type='text'
           placeholder='E-mail'
           className={styles.footer_input}
