@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout/Layout'
-import Slider from '../../components/Slider/Slider'
+
+import Slider from './HomeSlider/HomeSlider'
 
 const Home = () => {
   return (

@@ -12,7 +12,7 @@ const Header = () => {
           <li>Доставка</li>
         </ul>
         <Link to='/'>
-          <img src='/logo.svg' alt='logo' />
+          <img src='/logo/logo.svg' alt='logo' />
         </Link>
         <ul className={styles.menu_link}>
           <li>8(999)999-99-99</li>

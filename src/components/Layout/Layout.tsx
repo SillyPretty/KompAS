@@ -1,18 +1,20 @@
-import { PropsWithChildren } from 'react'
+import { FC, ReactNode } from 'react'
 
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import styles from './Layout.module.scss'
 import Search from './Search/Search'
 
-interface ILayout {}
+interface ILayout {
+  children: ReactNode
+}
 
-const Layout = ({ children }: PropsWithChildren<ILayout>) => {
+const Layout: FC<ILayout> = ({ children }) => {
   return (
     <div className={styles.layout_wrap}>
       <Header />
       <Search />
-      <div>{children}</div>
+      <body>{children}</body>
       <Footer />
     </div>
   )
