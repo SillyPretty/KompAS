@@ -1,17 +1,21 @@
 import Button from '../../../ui/Button/Button'
 import Input from '../../../ui/Input/Input'
 
-import { useProfile } from './Search'
-import styles from './Search.module.scss'
+import styles from './SearchLayout.module.scss'
 import SearchMenu from './Search_menu/SearchMenu'
+import { useSearch } from './useSearch'
 
 const Search = () => {
-  const { handleClickBtn, isVisibleMenu } = useProfile()
+  const { handleClickBtn, isVisibleMenu } = useSearch()
 
   return (
     <div className='container'>
       <div className={styles.search__wrap}>
-        <Button size='normal' onClick={handleClickBtn} active={isVisibleMenu ? 'active' : null}>
+        <Button
+          size='normal'
+          onClick={handleClickBtn}
+          active={isVisibleMenu ? 'active' : null}
+        >
           {!isVisibleMenu && <img src='/icons/Menu.svg' alt='Menu' />}
           Каталог
           {isVisibleMenu && <img src='/icons/Arrow.svg' alt='Arrow' />}

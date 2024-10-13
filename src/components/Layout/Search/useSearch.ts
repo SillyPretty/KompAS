@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 
-export const useProfile = () => {
+export const useSearch = () => {
   const [isVisibleMenu, setIsVisibleMenu] = useState<boolean>(false)
 
   const handleClickBtn = () => setIsVisibleMenu(!isVisibleMenu)
