@@ -14,7 +14,7 @@ const Layout: FC<ILayout> = ({ children }) => {
     <div className={styles.layout_wrap}>
       <Header />
       <Search />
-      <body>{children}</body>
+      <div>{children}</div>
       <Footer />
     </div>
   )

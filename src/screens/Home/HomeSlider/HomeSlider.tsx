@@ -7,13 +7,13 @@ import Button from '../../../ui/Button/Button'
 
 import styles from './HomeSlider.module.scss'
 
-const Slider: FC = () => {
+const HomeSlider: FC = () => {
   return (
-    <div className={styles.slider__wrap}>
+    <section className={styles.slider__wrap}>
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination
-        autoplay={{ delay: 7000, pauseOnMouseEnter: true}}
+        autoplay={{ delay: 8000, pauseOnMouseEnter: true }}
       >
         <SwiperSlide>
           <div className={styles.slider__container}>
@@ -65,8 +65,8 @@ const Slider: FC = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </section>
   )
 }
 
-export default Slider
+export default HomeSlider
