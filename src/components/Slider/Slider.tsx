@@ -5,9 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import styles from './Slider.module.scss'
 
-interface ISlider {
-  products: []
-}
+interface ISlider {}
 
 const data = [
   {
@@ -33,7 +31,7 @@ const data = [
   }
 ]
 
-const Slider: FC<ISlider> = ({ products }) => {
+const Slider: FC<ISlider> = () => {
   return (
     <div className='container'>
       <Swiper

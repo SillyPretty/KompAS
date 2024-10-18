@@ -1,0 +1,130 @@
+@import '/src/assets/variables.scss';
+@import '/src/assets/animate.scss';
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.main__card {
+  background-image: url('/images/Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 40px;
+  &_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_title {
+    font-size: $font-size-h1;
+    font-weight: bold;
+  }
+  &_description {
+    font-size: $font-size-cost-small;
+  }
+  &_image {
+    text-align: end;
+  }
+  &_cost_wrapper {
+    margin-top: -67px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &_discount {
+    color: $color-discount;
+    text-decoration: line-through;
+    font-size: $font-size-h3;
+  }
+  &_cost {
+    font-size: $font-size-cost;
+    font-weight: 600;
+  }
+}
+.second__card {
+  background-image: url('/images/Background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 27px 40px;
+  display: flex;
+  justify-content: space-between;
+  &_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_title {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  &_title {
+    font-size: $font-size-description;
+  }
+  &_description {
+    font-size: $font-size-cost-small;
+  }
+  &_cost {
+    margin-bottom: 10px;
+    font-size: $font-size-description;
+  }
+}
+.card__wrapper {
+  display: flex;
+  gap: 30px;
+}
+.card {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 27px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &:nth-child(1) {
+    background-image: url('/images/Background3.jpg');
+  }
+  &:nth-child(2) {
+    background-image: url('/images/Background4.jpg');
+  }
+  &__image{
+    text-align: center;
+  }
+  &__discount {
+    text-align: center;
+    font-size: $font-size-h3;
+    font-weight: bold;
+  }
+  &__title {
+    text-align: center;
+    font-size: $font-size-h4;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__cost_discount {
+    color: $color-discount;
+    text-decoration: line-through;
+    font-size: $font-size-h4;
+  }
+  &__cost {
+    font-size: $font-size-cost-small;
+    font-weight: 600;
+  }
+}
+.color__focused {
+  color: $color-focused;
+  font-size: inherit;
+}
