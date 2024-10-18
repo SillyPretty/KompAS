@@ -13,7 +13,7 @@ const Slider: FC = () => {
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination
-        autoplay={{ delay: 7000, disableOnInteraction: false }}
+        autoplay={{ delay: 7000, pauseOnMouseEnter: true}}
       >
         <SwiperSlide>
           <div className={styles.slider__container}>
