@@ -12,18 +12,18 @@ const Header = () => {
           <li>Доставка</li>
         </ul>
         <Link to='/'>
-          <img src='/logo/logo.svg' alt='logo' />
+          <img src='/images/logo/logo.svg' alt='logo' />
         </Link>
         <ul className={styles.menu_link}>
           <li>8(999)999-99-99</li>
           <li>
-            <img src='/icons/telegram_icon.svg' alt='telegram_icon' />
+            <img src='/images/icons/telegram_icon.svg' alt='telegram_icon' />
           </li>
           <li>
-            <img src='/icons/tik_tok_icon.svg' alt='tik_tok_icon' />
+            <img src='/images/icons/tik_tok_icon.svg' alt='tik_tok_icon' />
           </li>
           <li>
-            <img src='/icons/vk_icon.svg' alt='vk_icon' />
+            <img src='/images/icons/vk_icon.svg' alt='vk_icon' />
           </li>
         </ul>
       </nav>

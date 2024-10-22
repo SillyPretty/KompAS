@@ -45,7 +45,7 @@ const Slider: FC<ISlider> = () => {
             <div className={styles.card}>
               <div className={styles.favorite}>
                 <button>
-                  <img src='/icons/Favorite.svg' alt='Favorite' />
+                  <img src='/images/icons/Favorite.svg' alt='Favorite' />
                 </button>
               </div>
               <div className={styles.image}>
@@ -63,7 +63,7 @@ const Slider: FC<ISlider> = () => {
                   <span className={styles.currency}>₽</span>
                 </p>
                 <button className={styles.button__add}>
-                  <img src='/icons/Plus.svg' alt='Plus' />
+                  <img src='/images/icons/Plus.svg' alt='Plus' />
                 </button>
               </div>
             </div>

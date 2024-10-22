@@ -28,7 +28,7 @@ const HomeSlider: FC = () => {
               <Button size='large'>Перейти</Button>
             </div>
             <div className={styles.slider__img}>
-              <img src='/slider_back/iPhone-16.png' alt='Iphone-16' />
+              <img src='/images/slider_back/iPhone-16.png' alt='Iphone-16' />
             </div>
           </div>
         </SwiperSlide>
@@ -42,7 +42,7 @@ const HomeSlider: FC = () => {
               Уберёт и помоет в считанные минуты.
             </div>
             <div className={styles.slider__img}>
-              <img src='/slider_back/robot.png' alt='robot' />
+              <img src='/images/slider_back/robot.png' alt='robot' />
             </div>
             <Button size='large'>Перейти</Button>
           </div>
@@ -50,7 +50,7 @@ const HomeSlider: FC = () => {
         <SwiperSlide>
           <div className={styles.slider__container}>
             <div className={styles.slider__img}>
-              <img src='/slider_back/Video_card.png' alt='Video_card' />
+              <img src='/images/slider_back/Video_card.png' alt='Video_card' />
             </div>
             <div className={styles.slider_right__text_wrap}>
               <h1 className={styles.slider__title}>
