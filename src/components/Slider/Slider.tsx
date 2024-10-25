@@ -1,5 +1,6 @@
 import '/node_modules/swiper/swiper-bundle.min.css'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -42,31 +43,33 @@ const Slider: FC<ISlider> = () => {
       >
         {data.map(product => (
           <SwiperSlide key={product.id}>
-            <div className={styles.card}>
-              <div className={styles.favorite}>
-                <button>
-                  <img src='/images/icons/Favorite.svg' alt='Favorite' />
-                </button>
-              </div>
-              <div className={styles.image}>
-                <img src={product.image} alt={product.title} />
-              </div>
-              <p className={styles.wrap__title}>
-                <span className={styles.description}>
-                  {product.description}
-                </span>
-                <span className={styles.title}>{product.title}</span>
-              </p>
-              <div className={styles.wrap__add}>
-                <p className={styles.cost__wrap}>
-                  <span className={styles.cost}>{product.cost}</span>
-                  <span className={styles.currency}>₽</span>
+            <Link to={`/card/${product.id}`}>
+              <div className={styles.card}>
+                <div className={styles.favorite}>
+                  <button>
+                    <img src='/images/icons/Favorite.svg' alt='Favorite' />
+                  </button>
+                </div>
+                <div className={styles.image}>
+                  <img src={product.image} alt={product.title} />
+                </div>
+                <p className={styles.wrap__title}>
+                  <span className={styles.description}>
+                    {product.description}
+                  </span>
+                  <span className={styles.title}>{product.title}</span>
                 </p>
-                <button className={styles.button__add}>
-                  <img src='/images/icons/Plus.svg' alt='Plus' />
-                </button>
+                <div className={styles.wrap__add}>
+                  <p className={styles.cost__wrap}>
+                    <span className={styles.cost}>{product.cost}</span>
+                    <span className={styles.currency}>₽</span>
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
+            <button className={styles.button__add}>
+              <img src='/images/icons/Plus.svg' alt='Plus' />
+            </button>
           </SwiperSlide>
         ))}
       </Swiper>

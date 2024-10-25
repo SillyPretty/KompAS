@@ -9,7 +9,7 @@ export const routes = createBrowserRouter([
     element: <Home />
   },
   {
-    path: '/card',
+    path: '/card/:id',
     element: <Card />
   }
 ])
