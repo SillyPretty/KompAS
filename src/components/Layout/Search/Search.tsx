@@ -1,3 +1,9 @@
+import { useState } from 'react'
+
+import { isAuth } from '../../../hooks/useAuth'
+
+import Auth from '../../../screens/Auth/Auth'
+
 import Button from '../../../ui/Button/Button'
 import Input from '../../../ui/Input/Input'
 
@@ -7,6 +13,9 @@ import { useSearch } from './useSearch'
 
 const Search = () => {
   const { handleClickBtn, isVisibleMenu } = useSearch()
+  const [isVisibleAuth, setIsVisibleAuth] = useState(false)
+
+  const isAuthorization = isAuth()
 
   return (
     <div className='sticky'>
@@ -32,9 +41,14 @@ const Search = () => {
           <button className={styles.search__button}>
             <img src='/images/icons_search/Favorite.svg' alt='Favorite' />
           </button>
-          <button className={styles.search__button}>
-            <img src='/images/icons_search/Enter.svg' alt='Enter' />
+          <button className={styles.search__button} onClick={()=> setIsVisibleAuth(!isVisibleAuth)}>
+            {isAuthorization ? (
+              <img src='/images/icons_search/Enter.svg' alt='Enter' />
+            ) : (
+              <img src='/images/icons/User_icon.svg' />
+            )}
           </button>
+          {isVisibleAuth && <Auth />}
         </div>
         {isVisibleMenu && <SearchMenu />}
       </div>

@@ -8,7 +8,7 @@ import styles from './Slider.module.scss'
 
 interface ISlider {}
 
-const data = [
+export const data = [
   {
     id: 0,
     title: 'Iphone 15',
@@ -45,11 +45,9 @@ const Slider: FC<ISlider> = () => {
           <SwiperSlide key={product.id}>
             <Link to={`/card/${product.id}`}>
               <div className={styles.card}>
-                <div className={styles.favorite}>
-                  <button>
-                    <img src='/images/icons/Favorite.svg' alt='Favorite' />
-                  </button>
-                </div>
+                <button className={styles.favorite}>
+                  <img src='/images/icons/Favorite.svg' alt='Favorite' />
+                </button>
                 <div className={styles.image}>
                   <img src={product.image} alt={product.title} />
                 </div>
