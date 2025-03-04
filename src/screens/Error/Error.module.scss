@@ -1,0 +1,19 @@
+@import '/src/assets/variables.scss';
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+  margin-top: -20vh;
+}
+
+.title {
+  font-size: $font-size-h1-big;
+  font-weight: bold;
+}
+.subtitle {
+  font-size: $font-size-cost;
+}

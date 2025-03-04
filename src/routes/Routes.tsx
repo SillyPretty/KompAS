@@ -1,12 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import Card from '../screens/Card/Card'
+import Error from '../screens/Error/Error'
 import Home from '../screens/Home/Home'
+
+import Layout from '../components/Layout/Layout'
 
 export const routes = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    errorElement: <Error />
   },
   {
     path: '/card/:id',
