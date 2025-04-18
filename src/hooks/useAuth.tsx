@@ -1,10 +1,10 @@
 import Cookies from 'js-cookie'
 import { useState } from 'react'
 
-import { TOKEN } from '../constants/constants'
+import { TOKEN } from '../app.constants'
 
 export const isAuth = () => {
-  const [isAuth, setIsAuth] = useState(!!Cookies.get(TOKEN))
+  const [isAuth] = useState(!!Cookies.get(TOKEN))
 
   return isAuth
 }

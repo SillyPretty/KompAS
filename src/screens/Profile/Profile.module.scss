@@ -1,0 +1,53 @@
+@import '/src/assets/variables.scss';
+
+.container {
+  &__header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    > h2 {
+      font-size: 3em;
+    }
+  }
+  &__content {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    .profile__data {
+      display: flex;
+      gap: 20px;
+      > img {
+        max-width: 190px;
+      }
+      .user__info {
+        > h3 {
+          font-size: 2em;
+        }
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-wrap: nowrap;
+        span {
+          margin-left: 20px;
+        }
+        > p {
+          color: rgba($color: white, $alpha: 0.5);
+        }
+      }
+    }
+    .order {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      > h3 {
+        font-size: 2em;
+        text-align: right;
+      }
+      > p {
+        > span {
+          color: $color-focused;
+        }
+      }
+    }
+  }
+}

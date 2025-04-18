@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import Title from '../Title/Title'
+
 import styles from './Slider.module.scss'
 
 interface ISlider {}
@@ -35,6 +37,7 @@ export const data = [
 const Slider: FC<ISlider> = () => {
   return (
     <div className='container'>
+      <Title position='center'>Хиты продаж</Title>
       <Swiper
         modules={[Pagination, Autoplay]}
         slidesPerView={3}

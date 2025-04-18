@@ -3,22 +3,33 @@ import { FC, useState } from 'react'
 import Button from '../../../ui/Button/Button'
 import Input from '../../../ui/Input/Input'
 
-import { FormData } from '../../../interface/interface'
+import { FormDataRegister } from '../../../interface/interface'
+import { RegisterService } from '../../../services/auth.service'
 
 import styles from './Registration.module.scss'
 
 const Registration: FC = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormDataRegister>({
     name: '',
-    phone: '',
     email: '',
+    phone: '',
     city: '',
     password: ''
   })
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Отправленные данные:', formData)
+    const { message } = await RegisterService(
+      formData.name,
+      formData.phone,
+      formData.city,
+      formData.email,
+      formData.password
+    )
+    if (message === 'Успешная регистрация') {
+      console.log(message)
+      window.location.reload()
+    }
   }
 
   return (

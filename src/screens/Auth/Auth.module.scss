@@ -14,7 +14,19 @@
   max-width: 630px;
   min-height: 780px;
   background-color: #0f0f0f;
+  z-index: 2;
   box-shadow: 0 0 76px 1px rgba($color: $color-focused, $alpha: 0.24);
+}
+.container__background {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba($color: black, $alpha: 0.76);
 }
 .reg {
   > span {

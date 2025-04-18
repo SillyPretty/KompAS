@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { isAuth } from '../../../hooks/useAuth'
 
@@ -13,9 +14,10 @@ import { useSearch } from './useSearch'
 
 const Search = () => {
   const { handleClickBtn, isVisibleMenu } = useSearch()
-  const [isVisibleAuth, setIsVisibleAuth] = useState(false)
+  const [isVisibleAuth, setIsVisibleAuth] = useState(true)
 
   const isAuthorization = isAuth()
+  const navigate = useNavigate()
 
   return (
     <div className='sticky'>
@@ -41,14 +43,22 @@ const Search = () => {
           <button className={styles.search__button}>
             <img src='/images/icons_search/Favorite.svg' alt='Favorite' />
           </button>
-          <button className={styles.search__button} onClick={()=> setIsVisibleAuth(!isVisibleAuth)}>
-            {isAuthorization ? (
-              <img src='/images/icons_search/Enter.svg' alt='Enter' />
-            ) : (
+          {isAuthorization ? (
+            <button
+              className={styles.search__button}
+              onClick={() => navigate('/profile')}
+            >
               <img src='/images/icons/User_icon.svg' />
-            )}
-          </button>
-          {isVisibleAuth && <Auth />}
+            </button>
+          ) : (
+            <button
+              className={styles.search__button}
+              onClick={() => setIsVisibleAuth(!isVisibleAuth)}
+            >
+              <img src='/images/icons_search/Enter.svg' alt='Enter' />
+            </button>
+          )}
+          {isVisibleAuth && <Auth setIsVisibleAuth={setIsVisibleAuth} />}
         </div>
         {isVisibleMenu && <SearchMenu />}
       </div>

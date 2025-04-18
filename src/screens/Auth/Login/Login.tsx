@@ -3,22 +3,24 @@ import { FC, useState } from 'react'
 import Button from '../../../ui/Button/Button'
 import Input from '../../../ui/Input/Input'
 
-import { FormData } from '../../../interface/interface'
+import { FormDataAuth } from '../../../interface/interface'
+import { AuthService } from '../../../services/auth.service'
 
 import styles from './Login.module.scss'
 
 const Login: FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    phone: '',
+  const [formData, setFormData] = useState<FormDataAuth>({
     email: '',
-    city: '',
     password: ''
   })
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Отправленные данные:', formData)
+    const { message } = await AuthService(formData.email, formData.password)
+    if (message === 'Успешная авторизация') {
+      console.log(message)
+      window.location.reload()
+    }
   }
 
   return (
@@ -27,9 +29,9 @@ const Login: FC = () => {
         <h1 className={styles.title}>Вход в аккаунт</h1>
         <Input
           placeholder='Телефон'
-          type='text'
-          value={formData.phone}
-          onChange={e => setFormData({ ...formData, phone: e.target.value })}
+          type='email'
+          value={formData.email}
+          onChange={e => setFormData({ ...formData, email: e.target.value })}
         />
         <Input
           placeholder='Пароль'
