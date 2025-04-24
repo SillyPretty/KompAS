@@ -1,11 +1,11 @@
 import cn from 'clsx'
-import { FC, ReactNode } from 'react'
+import { FC, HTMLAttributes, ReactNode } from 'react'
 
 import styles from './Title.module.scss'
 
 type TypePosition = 'left' | 'center' | 'right'
 
-interface ITitle {
+interface ITitle extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode
   position: TypePosition
 }

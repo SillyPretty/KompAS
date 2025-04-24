@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 
-import Button from '../../../ui/Button/Button'
-import Input from '../../../ui/Input/Input'
+import Button from '../../../components/Button/Button'
+import Input from '../../../components/Input/Input'
 
 import { FormDataRegister } from '../../../interface/interface'
 import { RegisterService } from '../../../services/auth.service'

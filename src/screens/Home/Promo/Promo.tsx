@@ -1,6 +1,5 @@
+import Button from '../../../components/Button/Button'
 import Title from '../../../components/Title/Title'
-
-import Button from '../../../ui/Button/Button'
 
 import styles from './Promo.module.scss'
 

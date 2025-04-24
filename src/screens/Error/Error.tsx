@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import Button from '../../components/Button/Button'
 import Layout from '../../components/Layout/Layout'
-
-import Button from '../../ui/Button/Button'
 
 import styles from './Error.module.scss'
 

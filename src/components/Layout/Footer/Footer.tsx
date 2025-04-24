@@ -1,6 +1,5 @@
-import Button from '../../../ui/Button/Button'
-import Input from '../../../ui/Input/Input'
-
+import Button from '../../Button/Button'
+import Input from '../../Input/Input'
 import Header from '../Header/Header'
 
 import styles from './Footer.module.scss'

@@ -1,0 +1,53 @@
+@import '/src/assets/variables.scss';
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  > img {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  span {
+    color: $color-focused;
+  }
+}
+.color {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  &__change {
+    display: flex;
+    gap: 20px;
+  }
+  &__item {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    &_active {
+      box-shadow: 0 0 25px #5e5e5e;
+    }
+  }
+}
+
+.price {
+  font-size: $font-size-h1;
+  &__container {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: auto;
+    max-width: 300px;
+    width: 100%;
+  }
+}

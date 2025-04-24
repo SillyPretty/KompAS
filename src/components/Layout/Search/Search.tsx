@@ -5,8 +5,8 @@ import { isAuth } from '../../../hooks/useAuth'
 
 import Auth from '../../../screens/Auth/Auth'
 
-import Button from '../../../ui/Button/Button'
-import Input from '../../../ui/Input/Input'
+import Button from '../../Button/Button'
+import Input from '../../Input/Input'
 
 import styles from './Search.module.scss'
 import SearchMenu from './Search_menu/SearchMenu'
@@ -14,7 +14,7 @@ import { useSearch } from './useSearch'
 
 const Search = () => {
   const { handleClickBtn, isVisibleMenu } = useSearch()
-  const [isVisibleAuth, setIsVisibleAuth] = useState(true)
+  const [isVisibleAuth, setIsVisibleAuth] = useState(false)
 
   const isAuthorization = isAuth()
   const navigate = useNavigate()

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import Button from '../../../ui/Button/Button'
+import Button from '../../../components/Button/Button'
 
 import styles from './HomeSlider.module.scss'
 
