@@ -7,12 +7,13 @@ type TypePosition = 'left' | 'center' | 'right'
 
 interface ITitle extends HTMLAttributes<HTMLHeadingElement> {
   children: ReactNode
-  position: TypePosition
+  position?: TypePosition
+  stylesheet?: string
 }
 
-const Title: FC<ITitle> = ({ children, position }) => {
+const Title: FC<ITitle> = ({ children, position = 'left ', stylesheet }) => {
   return (
-    <h2 className={cn(styles.title, styles[position], 'container')}>
+    <h2 className={cn(styles.title, styles[position], 'container', stylesheet)}>
       {children}
     </h2>
   )

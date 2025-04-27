@@ -1,11 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import Card from '../screens/Card/Card'
+import Cart from '../screens/Cart/Cart'
 import Error from '../screens/Error/Error'
 import Home from '../screens/Home/Home'
 import Profile from '../screens/Profile/Profile'
-
-import Layout from '../components/Layout/Layout'
 
 export const routes = createBrowserRouter([
   {
@@ -19,10 +18,10 @@ export const routes = createBrowserRouter([
   },
   {
     path: '/profile',
-    element: (
-      <Layout>
-        <Profile />
-      </Layout>
-    )
+    element: <Profile />
+  },
+  {
+    path: '/cart',
+    element: <Cart />
   }
 ])

@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
     "js-cookie": "^3.0.5",

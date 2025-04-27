@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { isAuth } from '../../hooks/useAuth'
 
+import Layout from '../../components/Layout/Layout'
+
 import { TOKEN } from '../../app.constants'
 
 import styles from './Profile.module.scss'
@@ -45,42 +47,44 @@ const Profile = () => {
   }, [isAuthorization])
 
   return (
-    <div className='container'>
-      <div className={styles.container__header}>
-        <h2>Профиль</h2>
-        <button onClick={LogOut}>
-          <img src='/images/icons/Exit_logo.svg' alt='exit_logo' />
-        </button>
-      </div>
-      <div className={styles.container__content}>
-        <div className={styles.profile__data}>
-          <img src='/images/icons/user_profile.svg' alt='user_icon' />
-          <div className={styles.user__info}>
-            <h3>{user.name}</h3>
-            <p>
-              Телефон <span>{user.phone}</span>
-            </p>
-            <p>
-              E-mail <span>{user.email}</span>
-            </p>
-            <p>
-              Город <span>{user.city}</span>
-            </p>
+    <Layout>
+      <div className='container'>
+        <div className={styles.container__header}>
+          <h2>Профиль</h2>
+          <button onClick={LogOut}>
+            <img src='/images/icons/Exit_logo.svg' alt='exit_logo' />
+          </button>
+        </div>
+        <div className={styles.container__content}>
+          <div className={styles.profile__data}>
+            <img src='/images/icons/user_profile.svg' alt='user_icon' />
+            <div className={styles.user__info}>
+              <h3>{user.name}</h3>
+              <p>
+                Телефон <span>{user.phone}</span>
+              </p>
+              <p>
+                E-mail <span>{user.email}</span>
+              </p>
+              <p>
+                Город <span>{user.city}</span>
+              </p>
+            </div>
+          </div>
+          <div className={styles.order}>
+            <h3>История заказов</h3>
+            {order.map((item, index) => {
+              return (
+                <p key={index}>
+                  Заказ от <span>{item.date}</span> на адрес{' '}
+                  <span> {item.adress}</span>
+                </p>
+              )
+            })}
           </div>
         </div>
-        <div className={styles.order}>
-          <h3>История заказов</h3>
-          {order.map((item, index) => {
-            return (
-              <p key={index}>
-                Заказ от <span>{item.date}</span> на адрес{' '}
-                <span> {item.adress}</span>
-              </p>
-            )
-          })}
-        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 

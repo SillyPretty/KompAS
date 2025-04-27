@@ -21,3 +21,17 @@ export interface ResponseDataAuth {
 export interface AuthError {
   message: string
 }
+
+export interface IData {
+  id: string
+  name: string
+  description: string
+  price: number
+  category: string
+  stock: number
+  image: string
+  specifications: {
+    title: string
+    content: string
+  }[]
+}

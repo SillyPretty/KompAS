@@ -1,8 +1,8 @@
 import Cookies from 'js-cookie'
 
 import { $axios } from '../api'
-import { UserType } from '../app.types'
 import { TOKEN } from '../app.constants'
+import { UserType } from '../app.types'
 
 interface AuthResponse {
   id: string
@@ -22,6 +22,7 @@ export const AuthService = async (
       password
     })
     if (data.token) Cookies.set(TOKEN, data.token)
+    window.location.reload()
     return data
   } catch (error: any) {
     throw new Error(error)
@@ -44,6 +45,7 @@ export const RegisterService = async (
       password
     })
     if (data.token) Cookies.set(TOKEN, data.token)
+    window.location.reload()
     return data
   } catch (error: any) {
     throw new Error(error)

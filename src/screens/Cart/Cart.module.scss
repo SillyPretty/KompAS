@@ -1,0 +1,83 @@
+@use '/src/assets/variables.scss';
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+.container__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+}
+.image {
+  max-width: 170px;
+}
+
+.card {
+  &__body {
+  }
+  &__title {
+    font-size: variables.$font-size-h3;
+    color: variables.$color-focused;
+    margin-bottom: 20px;
+  }
+  &__container {
+    width: 500px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    .title {
+      color: rgba($color: variables.$foreground, $alpha: 0.5);
+    }
+    .content {
+      color: variables.$foreground;
+    }
+  }
+}
+
+.price {
+  width: 180px;
+  font-size: variables.$font-size-h2;
+  > span {
+    color: variables.$color-focused;
+  }
+}
+
+.none {
+  display: none;
+}
+.delete {
+  box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.5);
+  transition: 0.3s;
+  :hover {
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+  }
+}
+.price__container {
+  margin-top: 50px;
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  .price {
+    margin-left: auto;
+  }
+}
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 100vh;
+  margin-top: -20vh;
+  .title {
+    font-size: variables.$font-size-h1-big;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: variables.$font-size-cost;
+  }
+}

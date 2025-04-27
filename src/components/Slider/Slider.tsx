@@ -4,40 +4,20 @@ import { Link } from 'react-router-dom'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import { IData } from '../../interface/interface'
 import Title from '../Title/Title'
 
 import styles from './Slider.module.scss'
 
-interface ISlider {}
+interface ISlider {
+  title: string
+  data: IData[]
+}
 
-export const data = [
-  {
-    id: 0,
-    title: 'Iphone 15',
-    description: '256 GB Чёрный',
-    cost: 124000,
-    image: '/images/iPhone-16.png'
-  },
-  {
-    id: 1,
-    title: 'Samsung H235',
-    description: 'Робот-пылесос',
-    cost: 15000,
-    image: '/images/pilesos.png'
-  },
-  {
-    id: 2,
-    title: 'RTX 4060',
-    description: 'Видеокарта MSI GeForce',
-    cost: 48000,
-    image: '/images/card.png'
-  }
-]
-
-const Slider: FC<ISlider> = () => {
+const Slider: FC<ISlider> = ({ title, data }) => {
   return (
     <div className='container'>
-      <Title position='center'>Хиты продаж</Title>
+      <Title position='center'>{title}</Title>
       <Swiper
         modules={[Pagination, Autoplay]}
         slidesPerView={3}
@@ -52,17 +32,17 @@ const Slider: FC<ISlider> = () => {
                   <img src='/images/icons/Favorite.svg' alt='Favorite' />
                 </button>
                 <div className={styles.image}>
-                  <img src={product.image} alt={product.title} />
+                  <img src={product.image} alt={product.image} />
                 </div>
-                <p className={styles.wrap__title}>
-                  <span className={styles.description}>
+                <div className={styles.wrap__title}>
+                  <div className={styles.description}>
                     {product.description}
-                  </span>
-                  <span className={styles.title}>{product.title}</span>
-                </p>
+                  </div>
+                  <div className={styles.title}>{product.name}</div>
+                </div>
                 <div className={styles.wrap__add}>
                   <p className={styles.cost__wrap}>
-                    <span className={styles.cost}>{product.cost}</span>
+                    <span className={styles.cost}>{product.price}</span>
                     <span className={styles.currency}>₽</span>
                   </p>
                 </div>

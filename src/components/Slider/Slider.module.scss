@@ -15,8 +15,9 @@
   border-radius: 5px;
 }
 .wrap__title {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 5px;
 }
 .title {
@@ -25,8 +26,9 @@
   font-size: $font-size-h3;
 }
 .description {
+  display: inline-block;
   text-wrap: nowrap;
-  font-size: $font-size-h3;
+  font-size: $font-size-h4;
 }
 .wrap__add {
   display: flex;
@@ -52,7 +54,7 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   padding: 12px;
   transition: $transition-variable;
-  &:hover{
+  &:hover {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
   }
 }
@@ -64,5 +66,6 @@
 .image {
   > img {
     width: 100%;
+    height: 170px;
   }
 }

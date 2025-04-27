@@ -19,17 +19,13 @@ const Registration: FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const { message } = await RegisterService(
+    await RegisterService(
       formData.name,
       formData.phone,
       formData.city,
       formData.email,
       formData.password
     )
-    if (message === 'Успешная регистрация') {
-      console.log(message)
-      window.location.reload()
-    }
   }
 
   return (
