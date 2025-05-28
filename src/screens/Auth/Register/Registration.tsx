@@ -17,6 +17,29 @@ const Registration: FC = () => {
     password: ''
   })
 
+  const maskPhone = (value: string) => {
+    const numbers = value.replace(/\D/g, '')
+    let maskedValue = ''
+
+    if (numbers.length > 0) {
+      maskedValue = '+7 ('
+      if (numbers.length > 1) {
+        maskedValue += numbers.substring(1, 4)
+      }
+      if (numbers.length >= 4) {
+        maskedValue += ') ' + numbers.substring(4, 7)
+      }
+      if (numbers.length >= 7) {
+        maskedValue += '-' + numbers.substring(7, 9)
+      }
+      if (numbers.length >= 9) {
+        maskedValue += '-' + numbers.substring(9, 11)
+      }
+    }
+
+    return maskedValue
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     await RegisterService(
@@ -43,6 +66,7 @@ const Registration: FC = () => {
           type='text'
           value={formData.phone}
           onChange={e => setFormData({ ...formData, phone: e.target.value })}
+          mask={maskPhone}
         />
         <Input
           placeholder='E-mail'

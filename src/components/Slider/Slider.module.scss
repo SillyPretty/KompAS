@@ -57,6 +57,11 @@
   &:hover {
     box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.5);
   }
+
+  > img {
+    width: 40px;
+    height: 40px;
+  }
 }
 .favorite {
   position: absolute;

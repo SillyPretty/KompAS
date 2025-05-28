@@ -21,7 +21,7 @@ export const AuthService = async (
       email,
       password
     })
-    if (data.token) Cookies.set(TOKEN, data.token)
+    if (data.token) Cookies.set(TOKEN, data.token, { expires: 30 })
     window.location.reload()
     return data
   } catch (error: any) {
@@ -44,7 +44,7 @@ export const RegisterService = async (
       email,
       password
     })
-    if (data.token) Cookies.set(TOKEN, data.token)
+    if (data.token) Cookies.set(TOKEN, data.token, { expires: 30 })
     window.location.reload()
     return data
   } catch (error: any) {

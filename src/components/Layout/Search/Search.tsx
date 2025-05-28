@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { isAuth } from '../../../hooks/useAuth'
 
@@ -37,12 +37,12 @@ const Search = () => {
             type='text'
             placeholder='Поиск'
           />
-          <button className={styles.search__button}>
+          <Link to={'/cart'} className={styles.search__button}>
             <img src='/images/icons/Cart.svg' alt='Cart' />
-          </button>
-          <button className={styles.search__button}>
+          </Link>
+          <Link to={'/favorite'} className={styles.search__button}>
             <img src='/images/icons_search/Favorite.svg' alt='Favorite' />
-          </button>
+          </Link>
           {isAuthorization ? (
             <button
               className={styles.search__button}

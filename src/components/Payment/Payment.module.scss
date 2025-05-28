@@ -1,0 +1,45 @@
+@use '/src/assets/variables.scss';
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+  width: 100%;
+  &__row {
+    display: flex;
+    :last-child {
+      margin-left: 20px;
+    }
+  }
+  > select {
+    color: #141414;
+    width: 100%;
+    padding: 12px 0;
+    background-color: white;
+    > option {
+      color: #141414;
+    }
+  }
+}
+.image {
+  &__text {
+    max-width: 240px;
+    > span {
+      color: variables.$color-focused;
+    }
+  }
+}

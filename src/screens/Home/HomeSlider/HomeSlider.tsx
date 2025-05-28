@@ -1,5 +1,6 @@
 import '/node_modules/swiper/swiper-bundle.min.css'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -25,7 +26,9 @@ const HomeSlider: FC = () => {
               <div className={styles.slider__description}>
                 Успей приобрести нужный для себя цвет.
               </div>
-              <Button size='large'>Перейти</Button>
+              <Button size='large'>
+                <Link to={'/card/fake-1'}>Перейти</Link>
+              </Button>
             </div>
             <div className={styles.slider__img}>
               <img src='/images/slider_back/iPhone-16.png' alt='Iphone-16' />
@@ -44,7 +47,9 @@ const HomeSlider: FC = () => {
             <div className={styles.slider__img}>
               <img src='/images/slider_back/robot.png' alt='robot' />
             </div>
-            <Button size='large'>Перейти</Button>
+            <Button size='large'>
+              <Link to={'/card/fake-2'}>Перейти</Link>
+            </Button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -60,7 +65,9 @@ const HomeSlider: FC = () => {
               <div className={styles.slider__description}>
                 Прочувствуйте скорость и красочность картинки.
               </div>
-              <Button size='large'>Перейти</Button>
+              <Button size='large'>
+                <Link to={'/card/fake-3'}>Перейти</Link>
+              </Button>
             </div>
           </div>
         </SwiperSlide>

@@ -1,50 +1,97 @@
 import Cookies from 'js-cookie'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { isAuth } from '../../hooks/useAuth'
 
 import Layout from '../../components/Layout/Layout'
 
+import { $axios } from '../../api'
 import { TOKEN } from '../../app.constants'
 
 import styles from './Profile.module.scss'
 
-const user = {
-  name: 'Иванов Иван Иванович',
-  phone: '8(999)123-12-12',
-  email: 'ivanich@gmail.com',
-  city: 'Новомосковск'
-}
-
-const order = [
-  {
-    date: '12.09.2024 г.',
-    adress: ' ул. Трудовые Резервы, д.16, 2 этаж. '
-  },
-  {
-    date: '10.06.2024 г.',
-    adress: ' ул. Трудовые Резервы, д.16, 2 этаж. '
-  },
-  {
-    date: '08.02.2024 г.',
-    adress: ' ул. Трудовые Резервы, д.16, 2 этаж. '
+interface User {
+  id: string
+  name: string
+  email: string
+  role: string
+  createdAt: string
+  updatedAt: string
+  orders: {
+    id: string
+    createdAt: string
+    items: {
+      id: string
+      product: {
+        id: string
+        name: string
+        price: number
+      }
+      quantity: number
+    }[]
+  }[]
+  cart: {
+    items: any[]
   }
-]
+}
 
 const Profile = () => {
   const navigate = useNavigate()
+  const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  const isAuthorization = isAuth()
+
+  useEffect(() => {
+    if (!isAuthorization) {
+      navigate('/')
+    } else {
+      fetchUserProfile()
+    }
+  }, [isAuthorization])
+
+  const fetchUserProfile = async () => {
+    try {
+      const { data } = await $axios.get('/auth/profile')
+      setUser(data)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const LogOut = () => {
     Cookies.remove(TOKEN)
     window.location.reload()
   }
 
-  const isAuthorization = isAuth()
+  if (loading) {
+    return (
+      <Layout>
+        <div className='container'>Loading...</div>
+      </Layout>
+    )
+  }
 
-  useEffect(() => {
-    if (!isAuthorization) return navigate('/')
-  }, [isAuthorization])
+  if (error) {
+    return (
+      <Layout>
+        <div className='container'>Error: {error}</div>
+      </Layout>
+    )
+  }
+
+  if (!user) {
+    return (
+      <Layout>
+        <div className='container'>User not found</div>
+      </Layout>
+    )
+  }
+  console.log(user)
 
   return (
     <Layout>
@@ -61,26 +108,38 @@ const Profile = () => {
             <div className={styles.user__info}>
               <h3>{user.name}</h3>
               <p>
-                Телефон <span>{user.phone}</span>
-              </p>
-              <p>
                 E-mail <span>{user.email}</span>
               </p>
               <p>
-                Город <span>{user.city}</span>
+                Дата регистрации{' '}
+                <span>{new Date(user.createdAt).toLocaleDateString()}</span>
               </p>
             </div>
           </div>
           <div className={styles.order}>
             <h3>История заказов</h3>
-            {order.map((item, index) => {
-              return (
-                <p key={index}>
-                  Заказ от <span>{item.date}</span> на адрес{' '}
-                  <span> {item.adress}</span>
-                </p>
-              )
-            })}
+            {user.orders.length > 0 ? (
+              user.orders.map(order => (
+                <div key={order.id}>
+                  <p>
+                    Заказ от{' '}
+                    <span>
+                      {new Date(order.createdAt).toLocaleDateString()}
+                    </span>
+                  </p>
+                  <ul>
+                    {order.items.map(item => (
+                      <li key={item.id}>
+                        {item.product.name} - {item.quantity} шт. ×{' '}
+                        {item.product.price} ₽
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+            ) : (
+              <p>У вас пока нет заказов</p>
+            )}
           </div>
         </div>
       </div>

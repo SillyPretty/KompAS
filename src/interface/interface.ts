@@ -35,3 +35,19 @@ export interface IData {
     content: string
   }[]
 }
+
+export interface IProduct {
+  id: string
+  name: string
+  description: string
+  price: number
+  category: string
+  stock: number
+  image: string
+  specifications: {
+    title: string
+    content: string
+  }[]
+  createdAt: Date
+  updatedAt: Date
+}

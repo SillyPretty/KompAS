@@ -28,7 +28,7 @@ const Login: FC = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Вход в аккаунт</h1>
         <Input
-          placeholder='Телефон'
+          placeholder='Email'
           type='email'
           value={formData.email}
           onChange={e => setFormData({ ...formData, email: e.target.value })}
