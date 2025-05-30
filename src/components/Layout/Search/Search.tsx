@@ -15,9 +15,17 @@ import { useSearch } from './useSearch'
 const Search = () => {
   const { handleClickBtn, isVisibleMenu } = useSearch()
   const [isVisibleAuth, setIsVisibleAuth] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const navigate = useNavigate()
 
   const isAuthorization = isAuth()
-  const navigate = useNavigate()
+
+  const handleSearch = (e: any) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      navigate(`/search/${encodeURIComponent(searchQuery.trim())}`)
+      window.location.reload()
+    }
+  }
 
   return (
     <div className='sticky'>
@@ -36,6 +44,9 @@ const Search = () => {
             icon='/images/icons_search/Search.svg'
             type='text'
             placeholder='Поиск'
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            onKeyDown={handleSearch}
           />
           <Link to={'/cart'} className={styles.search__button}>
             <img src='/images/icons/Cart.svg' alt='Cart' />

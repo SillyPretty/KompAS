@@ -139,24 +139,29 @@ const Cart = () => {
         {cartItems.map(item => {
           return (
             <div className={styles.container__card} key={item.id}>
-              <div className={styles.image}>
-                <img src={item.product.image} alt={item.product.name} />
-              </div>
-              <div className={styles.card__body}>
-                <div className={styles.card__title}>{item.product.name}</div>
-                <div>
-                  {item.product.specifications
-                    .slice(0, 3)
-                    .map((specification, index) => (
-                      <div className={styles.card__container} key={index}>
-                        <div className={styles.title}>
-                          {specification.title}
+              <div
+                className={styles.card}
+                onClick={() => navigate(`/card/${item.product.id}`)}
+              >
+                <div className={styles.image}>
+                  <img src={item.product.image} alt={item.product.name} />
+                </div>
+                <div className={styles.card__body}>
+                  <div className={styles.card__title}>{item.product.name}</div>
+                  <div>
+                    {item.product.specifications
+                      .slice(0, 3)
+                      .map((specification, index) => (
+                        <div className={styles.card__container} key={index}>
+                          <div className={styles.title}>
+                            {specification.title}
+                          </div>
+                          <div className={styles.content}>
+                            {specification.content}
+                          </div>
                         </div>
-                        <div className={styles.content}>
-                          {specification.content}
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                  </div>
                 </div>
               </div>
               <div className={styles.price}>

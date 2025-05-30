@@ -25,8 +25,10 @@
   }
   &__title {
     font-size: variables.$font-size-h3;
-    color: variables.$color-focused;
     margin-bottom: 20px;
+    > span {
+      color: variables.$color-focused;
+    }
   }
   &__container {
     width: 500px;
@@ -44,7 +46,7 @@
 
 .price {
   width: 180px;
-  font-size: variables.$font-size-h2;
+  font-size: variables.$font-size-h3;
   > span {
     color: variables.$color-focused;
   }

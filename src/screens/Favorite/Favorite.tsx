@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import Button from '../../components/Button/Button'
 import Layout from '../../components/Layout/Layout'
@@ -27,6 +27,7 @@ const Favorite = () => {
   const [favoriteItems, setFavoriteItems] = useState<FavoriteItem[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetchFavoriteItems()
@@ -93,24 +94,29 @@ const Favorite = () => {
         {favoriteItems.map(item => {
           return (
             <div className={styles.container__card} key={item.id}>
-              <div className={styles.image}>
-                <img src={item.product.image} alt={item.product.name} />
-              </div>
-              <div className={styles.card__body}>
-                <div className={styles.card__title}>{item.product.name}</div>
-                <div>
-                  {item.product.specifications
-                    .slice(0, 3)
-                    .map((specification, index) => (
-                      <div className={styles.card__container} key={index}>
-                        <div className={styles.title}>
-                          {specification.title}
+              <div
+                className={styles.card}
+                onClick={() => navigate(`/card/${item.product.id}`)}
+              >
+                <div className={styles.image}>
+                  <img src={item.product.image} alt={item.product.name} />
+                </div>
+                <div className={styles.card__body}>
+                  <div className={styles.card__title}>{item.product.name}</div>
+                  <div>
+                    {item.product.specifications
+                      .slice(0, 3)
+                      .map((specification, index) => (
+                        <div className={styles.card__container} key={index}>
+                          <div className={styles.title}>
+                            {specification.title}
+                          </div>
+                          <div className={styles.content}>
+                            {specification.content}
+                          </div>
                         </div>
-                        <div className={styles.content}>
-                          {specification.content}
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                  </div>
                 </div>
               </div>
               <div className={styles.price}>

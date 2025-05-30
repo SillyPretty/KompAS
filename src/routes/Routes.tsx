@@ -6,6 +6,7 @@ import Error from '../screens/Error/Error'
 import Favorite from '../screens/Favorite/Favorite'
 import Home from '../screens/Home/Home'
 import Profile from '../screens/Profile/Profile'
+import SearchScreen from '../screens/Search/SearchScreen'
 
 export const routes = createBrowserRouter([
   {
@@ -28,5 +29,9 @@ export const routes = createBrowserRouter([
   {
     path: '/favorite',
     element: <Favorite />
+  },
+  {
+    path: '/search/:title',
+    element: <SearchScreen />
   }
 ])
