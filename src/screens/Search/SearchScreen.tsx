@@ -72,7 +72,9 @@ const SearchScreen = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <Title>Товары по запросу "{title}"</Title>
+        <Title>
+          {title === 'all' ? <>Все товары</> : <>Товары по запросу "{title}"</>}
+        </Title>
         {cartItems.map(item => {
           return (
             <div className={styles.container__card} key={item.id}>

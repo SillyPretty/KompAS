@@ -33,12 +33,12 @@ const Search = () => {
         <div className={styles.search__wrap}>
           <Button
             size='normal'
-            onClick={handleClickBtn}
+            onClick={() => navigate('/search/all')}
             active={isVisibleMenu ? 'active' : null}
           >
-            {!isVisibleMenu && <img src='/images/icons/Menu.svg' alt='Menu' />}
+            <img src='/images/icons/Menu.svg' alt='Menu' />
             Каталог
-            {isVisibleMenu && <img src='/images/icons/Arrow.svg' alt='Arrow' />}
+            {/* {isVisibleMenu && <img src='/images/icons/Arrow.svg' alt='Arrow' />} */}
           </Button>
           <Input
             icon='/images/icons_search/Search.svg'
