@@ -13,7 +13,7 @@ import SearchMenu from './Search_menu/SearchMenu'
 import { useSearch } from './useSearch'
 
 const Search = () => {
-  const { handleClickBtn, isVisibleMenu } = useSearch()
+  const { isVisibleMenu } = useSearch()
   const [isVisibleAuth, setIsVisibleAuth] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const navigate = useNavigate()
