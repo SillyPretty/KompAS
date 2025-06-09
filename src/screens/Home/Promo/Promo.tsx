@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Button from '../../../components/Button/Button'
 import Title from '../../../components/Title/Title'
 
@@ -26,7 +28,9 @@ const Promo = () => {
               <div className={styles.main__card_cost}>
                 129999 <span className={styles.color__focused}>₽</span>
               </div>
-              <Button size='large'>Подробнее</Button>
+              <Button size='large'>
+                <Link to={'/card/fake-2'}>Подробнее</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -46,7 +50,9 @@ const Promo = () => {
                 <div className={styles.second__card_cost}>
                   129999 <span className={styles.color__focused}>₽</span>
                 </div>
-                <Button size='normal'>Подробнее</Button>
+                <Button size='normal'>
+                  <Link to={'/card/fake-1'}>Подробнее</Link>
+                </Button>
               </div>
             </div>
             <div className={styles.second__image}>
@@ -72,7 +78,9 @@ const Promo = () => {
                     27999 <span className={styles.color__focused}>₽</span>
                   </div>
                 </div>
-                <Button size='small'>Подробнее</Button>
+                <Button size='small'>
+                  <Link to={'/card/fake-17'}>Подробнее</Link>
+                </Button>
               </div>
             </div>
             <div className={styles.card}>
@@ -93,7 +101,10 @@ const Promo = () => {
                     39995 <span className={styles.color__focused}>₽</span>
                   </div>
                 </div>
-                <Button size='small'>Подробнее</Button>
+                <Button size='small'>
+                  {' '}
+                  <Link to={'/card/fake-18'}>Подробнее</Link>
+                </Button>
               </div>
             </div>
           </div>

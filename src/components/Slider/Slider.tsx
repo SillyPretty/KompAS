@@ -30,7 +30,6 @@ const Slider: FC<ISlider> = ({ title, data }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
   const [favoriteItems, setFavoriteItems] = useState<FavoriteItem[]>([])
 
-  // Load initial state from cookies
   useEffect(() => {
     const cartCookie = Cookies.get('cart')
     const favoritesCookie = Cookies.get('favorites')
@@ -72,13 +71,11 @@ const Slider: FC<ISlider> = ({ title, data }) => {
     let updatedFavorites: FavoriteItem[] = []
 
     if (existingIndex >= 0) {
-      // Remove existing favorite
       updatedFavorites = [
         ...favoriteItems.slice(0, existingIndex),
         ...favoriteItems.slice(existingIndex + 1)
       ]
     } else {
-      // Add new favorite with full product data
       updatedFavorites = [...favoriteItems, { product, isFavorite: true }]
     }
 
