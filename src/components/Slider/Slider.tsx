@@ -104,7 +104,7 @@ const Slider: FC<ISlider> = ({ title, data }) => {
         modules={[Pagination, Autoplay]}
         slidesPerView={3}
         spaceBetween={30}
-        pagination
+        // pagination
       >
         {data.map((product, index) => (
           <SwiperSlide key={index}>
